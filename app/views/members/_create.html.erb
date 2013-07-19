@@ -1,0 +1,23 @@
+<div id="member-create" class="modal" style="display: none;">
+  <%= simple_form_for :member, :url => members_path, :html => {:method => :post, :class => 'form-horizontal' } do |m| %>
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">&#215;</a>
+      <h3>Edit Group</h3>
+    </div>
+    <div class="modal-body">
+    	<%= hidden_field_tag :group_identifier, group_id %>
+      <%= m.label :first_name, 'First Name' %>
+      <%= m.text_field :first_name, autofocus: true %>
+
+      <%= m.label :last_name, 'Last Name' %>
+      <%= m.text_field :last_name, autofocus: true %>
+
+      <%= m.label :email, 'Email' %>
+      <%= m.email_field :email %>
+    </div>
+    <div class="modal-footer">
+      <%= m.submit "Create", :class => "btn" %>
+      <a class="btn" data-dismiss="modal" href="#">Close</a>
+    </div>
+  <% end %>
+</div>

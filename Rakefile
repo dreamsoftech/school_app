@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-RailsStripeMembershipSaas::Application.load_tasks
+DigestTeamMailer::Application.load_tasks

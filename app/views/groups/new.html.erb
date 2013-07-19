@@ -1,0 +1,24 @@
+<h2>Create Group</h2>
+
+<%= simple_form_for(@group, url: groups_path, :html => {:class => 'form-vertical' }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="row">
+	  <div class="form-inputs span4">
+			<%= f.input :name, autofocus: true %>
+			<%= f.time_zone_select :timezone,
+				ActiveSupport::TimeZone.us_zones,
+        default: "Pacific Time (US & Canada)" %>
+			<%= f.input :description, :class => "span7" %>
+		</div>
+		<!-- <div class="span8">
+			<div class="sidebar">
+				<h4> Message Template </h4>
+				<textarea>
+				</textarea>
+			</div>
+		</div> -->
+	</div>
+	<hr>
+		<%= f.button :submit, "Create" %>
+<% end %>
