@@ -1,3 +1,7 @@
+require 'rubygems'
+require "bundler/setup"
+require 'daemons'
+
 DigestTeamMailer::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -30,9 +34,6 @@ DigestTeamMailer::Application.configure do
     user_name: ENV["GMAIL_USERNAME"],
     password: ENV["GMAIL_PASSWORD"]
   }
-
-
-
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 

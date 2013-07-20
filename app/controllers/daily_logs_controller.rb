@@ -1,3 +1,3 @@
 class DailyLogsController < ApplicationController
-	
+
 end
