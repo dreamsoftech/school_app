@@ -1,9 +1,3 @@
-# @fetcher = Fetcher.create({:type => :imap,
-#                            :receiver => TaskMailer,
-#                            :server => 'gmail.com',
-#                            :username => 'reedkevin88',
-#                            :password => 'iamnotkevin88'})
-# @fetcher.fetch
 
 #!/usr/bin/env ruby
 require "rubygems"
@@ -17,7 +11,7 @@ Mailman.config.imap = {
   enable_starttls_auto: true,
   authentication: 'plain',
   username: 'reedkevin88@gmail.com',
-  password: 'iamnotkevin88'
+  password: 'fanatic8822'
 }
 
 Mailman::Application.run do

@@ -27,5 +27,4 @@ DigestTeamMailer::Application.routes.draw do
   
   resources :users
 
-  # post '/create-digests', :to => 'digests#create', :as => 'create_digest'
 end

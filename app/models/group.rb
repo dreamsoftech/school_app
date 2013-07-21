@@ -15,13 +15,13 @@ class Group < ActiveRecord::Base
       if !g.members.empty?
     		members = g.members
     		members.each do |m|
-          next if m.email.include?('@example.com')
-
+          next if m.daily_logs.empty?
+          TaskMailer.weekly_log_email(m, g).deliver
           if cur_time.wday == 5 and cur_time.hour == 17 # Friday 5:00PM
-            TaskMailer.request_submit_email(m).deliver
-          elseif cur_time.hour == 16 and cur_time.wday < 5 and cur_time.wday > 0 # Monday ~ Thursday 4:00PM
             TaskMailer.weekly_log_email(m, g).deliver
-		      end
+          elseif cur_time.hour == 16 and cur_time.wday < 5 and cur_time.wday > 0 # Monday ~ Thursday 4:00PM
+            TaskMailer.request_submit_email(m).deliver
+  		    end
   	    end
       end
     end
