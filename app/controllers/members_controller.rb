@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+  before_filter :authenticate_user!
   def create
     @group = Group.find_by_id! params[:group_identifier]
     @member = @group.members.new(params[:member])

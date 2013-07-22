@@ -2,4 +2,3 @@
 
 require ::File.expand_path('../config/environment',  __FILE__)
 run DigestTeamMailer::Application
-bundle exec rake mailman:start
