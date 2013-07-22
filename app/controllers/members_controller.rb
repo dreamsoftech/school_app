@@ -24,6 +24,7 @@ class MembersController < ApplicationController
 
   def index
     @members = Member.all
+    @groups = Group.all
   end
 
   def destroy

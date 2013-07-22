@@ -8,6 +8,8 @@
             <th>Name</th>
             <th>Email</th>
             <th>Registered</th>
+            <th>Group</th>
+            <th>Time Zone</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -17,13 +19,16 @@
             <td><%= link_to member.first_name, member %></td>
             <td><%= member.email %></td>
             <td><%= member.created_at.to_date %></td>
+            <% group = @groups.bsearch{|x| x.id == member.group_id} %>
+            <td><%= group.name %></td>
+            <td><%= group.timezone %></td>
             <td><%= member.daily_logs.where("created_at > ?", Time.now.beginning_of_day).empty? ? "Not Submit" : "Submit"%></td>
           </tr>
         <% end %>
         </tbody>
       </table>
       <hr>
-      <p class="text-right"><%= Time.now.to_date%> </p>
+      <h4><%= Time.now%> </h4>
     </div>
   </div>
 <body>
