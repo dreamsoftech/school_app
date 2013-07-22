@@ -1,14 +1,4 @@
 DigestTeamMailer::Application.routes.draw do
-  get "member/new"
-
-  get "member/create"
-
-  get "member/edit"
-
-  get "member/update"
-
-  get "member/destroy"
-
   mount StripeEvent::Engine => '/stripe'
   get "content/gold"
   get "content/silver"
@@ -24,7 +14,7 @@ DigestTeamMailer::Application.routes.draw do
   end
   resources :groups
     resources :members
-  
+  resources :members
   resources :users
 
 end

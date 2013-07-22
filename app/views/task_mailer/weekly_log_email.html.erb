@@ -1,18 +1,77 @@
-<h2>Your Weekly Log</p>
-<hr>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<body>
 
-<br>
-<% @daily_logs.each do |d| %>
-<h4> Subject: <%= d.subject %> </h4>
-<h4> Date: <%= d.create_at.to_date %> </h4>
-<br>
-<p><%= d.content + Time.now.begining_of_week.to_date%>
+<div style="width:100%;" align="center">
 
-</p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="top" style="background-color:#53636e;" bgcolor="#53636e;">
+    
+    <br>
+    <br>
+    <table width="583" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="left" valign="top" bgcolor="#FFFFFF" style="background-color:#FFFFFF;"><img src="images/header.jpg" width="583" height="118"></td>
+      </tr>
+      <tr>
+        <td align="left" valign="top" bgcolor="#FFFFFF" style="background-color:#FFFFFF;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="35" align="left" valign="top">&nbsp;</td>
+            <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center" valign="top">
+                	<div style="color:#245da5; font-family:Times New Roman, Times, serif; font-size:36px;">Your Weekly Log</div>
+                  <div style="font-family: Verdana, Geneva, sans-serif; color:#898989; font-size:12px;"><%= Time.now %></div></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="images/pic1.jpg" width="512" height="296" vspace="10"></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#525252;">
+                  <% @daily_logs.each do |d| %>
+                    <br>
+                    <div style="color:#3482ad; font-size:16px;">
+                      Subject: <%= d.subject %>
+                    </div>
+                    <div style="color:#3482ad; font-size:16px;">
+                      Date: <%= d.created_at %>
+                    </div>
+                    <br>
+                    <%= d.content %>
+                    <br>
+                    <hr>
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#525252;">&nbsp;</td>
+              </tr>
+            </table></td>
+            <td width="35" align="left" valign="top">&nbsp;</td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td align="left" valign="top" bgcolor="#3d90bd" style="background-color:#3d90bd;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="35">&nbsp;</td>
+            <td height="50" valign="middle" style="color:#FFFFFF; font-size:11px; font-family:Arial, Helvetica, sans-serif;"><b>Contacts:</b><br>
+123 James Street,  Suite100, Long Beach CA, 90000, (000) 123  4567 </td>
+            <td width="35">&nbsp;</td>
+          </tr>
+        </table></td>
+      </tr>
+  </table>
+    <br>
+    <br></td>
+  </tr>
+</table>
 
-<hr>
-<br>
-<% end %>
-<p>Have a nice weekend.</p>
-<p>Thanks and Regards,</p>
-<p>Digest</p>
+</div>
+
+</body>
+</html>

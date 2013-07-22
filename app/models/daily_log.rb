@@ -3,8 +3,7 @@ class DailyLog < ActiveRecord::Base
   belongs_to :member
 
 
-	def self.receive_email
-		logger.debug "----------------------------------------------------------------------"
-		TaskMailer.receive(STDIN)
-	end
+	Mailman::Rails.receive do
+    TaskMailer.receive(message)
+  end
 end

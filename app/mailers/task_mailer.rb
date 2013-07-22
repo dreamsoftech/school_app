@@ -10,7 +10,8 @@ class TaskMailer < ActionMailer::Base
         @member = member
         @group = group
 
-        @daily_logs = DailyLog.where ("member_id = ? and created_at > Time.now.begining_of_week and created_at < (Time.now.begining_of_week + 5.days)" )
+        time_range = Time.now.beginning_of_week..(Time.now.beginning_of_week + 5.days)
+        @daily_logs = member.daily_logs.where(daily_logs: {created_at: time_range})
 
         mail(to: member.email, subject: "Your Week Log")
     end

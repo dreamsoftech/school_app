@@ -1,25 +1,32 @@
 <%= link_to "Digest Application", root_path, :class => 'brand' %>
-<ul class="nav">
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>        
-    </li>
-  <% else %>
-    <li>
-    <%= link_to 'Login', new_user_session_path %>  
-    </li>
-  <% end %>
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Edit account', edit_user_registration_path %>
-    </li>
-    <% if current_user.has_role? :admin %>
+<div class="nav-form" id="main-menu">
+  <ul class="nav">
+    <% if user_signed_in? %>
+      <% if current_user.has_role? :admin %>
+        <li>
+        <%= link_to 'Admin', users_path %>
+        </li>
+        <li>
+          <%= link_to 'Groups', groups_path %>
+        </li>
+        <li>
+          <%= link_to 'Members', members_path %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+  <ul class="nav pull-right">
+    <% if user_signed_in? %>
       <li>
-      <%= link_to 'Admin', users_path %>
+      <%= link_to 'Edit account', edit_user_registration_path %>
       </li>
       <li>
-        <%= link_to 'Digest', groups_path %>
+      <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>        
+      </li>
+    <% else %>
+      <li>
+      <%= link_to 'Login', new_user_session_path %>  
       </li>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+</div>

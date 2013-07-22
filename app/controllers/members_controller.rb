@@ -22,6 +22,10 @@ class MembersController < ApplicationController
     end
   end
 
+  def index
+    @members = Member.all
+  end
+
   def destroy
     @member = Member.find(params[:id])
     @group = Group.find_by_id! @member.group_id unless @member.nil?
