@@ -1,32 +1,34 @@
-<%= link_to "Digest Application", root_path, :class => 'brand' %>
-<div class="nav-form" id="main-menu">
-  <ul class="nav">
-    <% if user_signed_in? %>
-      <% if current_user.has_role? :admin %>
-        <li>
-        <%= link_to 'Admin', users_path %>
-        </li>
-        <li>
-          <%= link_to 'Groups', groups_path %>
-        </li>
-        <li>
-          <%= link_to 'Members', members_path %>
-        </li>
-      <% end %>
-    <% end %>
-  </ul>
-  <ul class="nav pull-right">
-    <% if user_signed_in? %>
-      <li>
-      <%= link_to 'Edit account', edit_user_registration_path %>
-      </li>
-      <li>
-      <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>        
-      </li>
-    <% else %>
-      <li>
-      <%= link_to 'Login', new_user_session_path %>  
-      </li>
-    <% end %>
-  </ul>
-</div>
+<% if user_signed_in? %>
+<div class="navigation">
+    <div class="container">
+      <table>
+        <tr>
+          <td>
+            <%= link_to '<i class="glyphicon glyphicon-tasks"></i><br>Activity'.html_safe, activitys_path %>
+          </td>
+          <td>
+            <%= link_to '<i class="glyphicon glyphicon-calendar"></i><br>Schedule'.html_safe, schedules_path %>
+          </td>
+          <td class="selected">
+            <%= link_to '<i class="glyphicon glyphicon-user"></i><br>Members'.html_safe, members_path %>
+          </td>
+          <td>
+            <%= link_to '<i class="glyphicon glyphicon-comment"></i><br>Emails'.html_safe, emails_path %>
+          </td>
+          <td>
+            <%= link_to '<i class="glyphicon glyphicon-phone"></i><br>Widgets'.html_safe, edit_widget_path(1) %>
+          </td>
+          <td>
+            <%= link_to '<i class="glyphicon glyphicon-cog"></i><br>Settings'.html_safe, settings_path %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <% else %>
+  <div class="signUpSubHeader">
+    <div class="container">
+      Sign Up
+    </div>
+  </div>
+<% end %>

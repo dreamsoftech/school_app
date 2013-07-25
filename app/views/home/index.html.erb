@@ -1,30 +1,36 @@
 <div id="welcome" class="hero-unit span7">
-  <h1>School App</h1>
-  <h3>This is reminder app for schools</h3>
+  <br>
+  <h2>School App</h2>
+  <h4>This is reminder app for schools</h4>
+  <br>
 </div>
-<div class="row span8 plans">
-  <div class="span2 well">
-    <div class="plan"><h2>Silver</h2></div>
+<br>
+<div class="container">
+  <div class="floatRight box">
+    <div class="plan"><h3>Platinum</h3></div>
     <ul class="unstyled">
-      <li>12 lesson a month</li>
+      <li>Unlimited lessons a month</li>
     </ul>
-    <h3>$1/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn btn-primary' %> 
+    <h4>$5/month</h4>
+    <br>
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn' %> 
   </div>
-  <div class="span2 well featured">
-    <div class="plan featured-plan"><h2>Gold</h2></div>
+  <div class="floatRight box">
+    <div class="plan featured-plan"><h3>Gold</h3></div>
     <ul class="unstyled">
       <li>20 lessons a month</li>
     </ul>
-    <h3>$2/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn btn-primary' %> 
+    <h4>$20/month</h4>
+    <br>
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn' %> 
   </div>
-  <div class="span2 well">
-    <div class="plan"><h2>Platinum</h2></div>
+  <div class="floatRight box">
+    <div class="plan"><h3>Silver</h3></div>
     <ul class="unstyled">
-      <li>50 lessons a month</li>
+      <li>5 lessons a month</li>
     </ul>
-    <h3>$3/month</h3>
-    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn btn-primary' %> 
+    <h4>$0/month</h4>
+    <br>
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn' %> 
   </div>
 </div>
