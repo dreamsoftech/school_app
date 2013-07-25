@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SchoolApp</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144-precomposed.png">
+</head>
+
+<body>
+
+	<!-- Content
+	================================================== -->
+<div class="wrapper">
+	<div class="header">
+		<div class="container">
+			{{SCHOOL}}
+			<div class="floatRight">
+				Sign Out
+			</div>
+		</div></div>
+
+	<div class="navigation">
+		<div class="container">
+			<table>
+				<tr>
+					
+					<td onClick="window.location.href = 'index.html';">
+						<i class="glyphicon glyphicon-tasks"></i><br>
+						Activity
+					</td>
+					<td onClick="window.location.href = 'schedule.html';">
+						<i class="glyphicon glyphicon-calendar"></i><br>
+						Schedule
+					</td>
+					<td class="selected" onClick="window.location.href = 'members.html';">
+						<i class="glyphicon glyphicon-user"></i><br>
+						Members
+					</td>
+					<td onClick="window.location.href = 'email.html';">
+						<i class="glyphicon glyphicon-comment"></i><br>
+						Emails
+					</td>
+					<td onClick="window.location.href = 'widget.html';">
+						<i class="glyphicon glyphicon-phone"></i><br>
+						Widget
+					</td>
+					<td onClick="window.location.href = 'settings.html';">
+						<i class="glyphicon glyphicon-cog"></i><br>
+						Settings
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="container main">
+
+
+<div class="floatRight box tip">
+	<div style="text-align: center;"><select style="margin: 0 auto">
+		<option>Select an email to edit</option>
+	</select></div>
+	<hr style="margin: 6px 0">	
+This is the message members will receive when they first sign up for the intro class.<br><br>
+<strong>Tips:</strong><br>
+&bull; Always include price sheets<br>
+&bull; Something else
+</div>
+
+	
+	<strong>Editing "Intro to New Class"
+	<div class="container2">
+	
+		<div class="textareaWrap">
+<textarea>Hi %name,
+
+[Pre-generated email]
+
+Best Regards,
+Max</textarea></div>
+
+			<div class="floatRight">	
+				<div class="button margin blue">Preview</div><div class="click">Save</div>
+			</div>
+				<div class="button margin inactive">Revert to Original</div>
+</div>
+
+</div></div>
+
+	<div class="footer container">
+		<div class="floatRight">
+			Terms &nbsp; &nbsp;Feature Request &nbsp; &nbsp;Feedback &nbsp; &nbsp;Support
+		</div>
+		<strong>&copy; 2013</strong>
+	</div>
+</body>
+</html>

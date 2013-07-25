@@ -1,34 +1,19 @@
-<body>
-  <div>
-    <h3>Members</h3>
-    <div>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Registered</th>
-            <th>Group</th>
-            <th>Time Zone</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-        <% @members.each do |member| %>
-          <tr>
-            <td><%= link_to member.first_name, member %></td>
-            <td><%= member.email %></td>
-            <td><%= member.created_at.to_date %></td>
-            <% group = @groups.detect{|x| x.id == member.group_id} %>
-            <td><%= group.name unless group.nil? %></td>
-            <td><%= group.timezone %></td>
-            <td><%= member.daily_logs.where("created_at > ?", Time.now.beginning_of_day).empty? ? "Not Submit" : "Submit"%></td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
-      <hr>
-      <h4><%= Time.now%> </h4>
-    </div>
-  </div>
-<body>
+<!-- @include header -->
+<h3>Members</h3>
+<div style="float: right"></div>
+<strong> Displaying 1-50 of 1419 Members</strong>
+<table class="threeColumn solid clickableGlyph fullWidth table">
+  <tbody>
+  <% @members.each do |member| %>
+    <tr>
+      <td><%= link_to member.first_name + " " + member.last_name, member %></td>
+      <td><%= member.email %></td>
+      <td>
+      	<%= member.created_at.to_date %>
+      	<i class="glyphicon glyphicon-chevron-right"></i>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<!-- @include footer -->

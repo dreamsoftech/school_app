@@ -16,5 +16,10 @@ DigestTeamMailer::Application.routes.draw do
     resources :members
   resources :members
   resources :users
+  resources :activitys
+  resources :schedules
+  resources :settings
+  resources :emails
+  resources :widgets
 
 end

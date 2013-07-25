@@ -2,34 +2,70 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Rails Stripe Membership Saas" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Digest Team Site" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "School App" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "School App" %>">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144-precomposed.png">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
-  <body class="<%= controller_name %> <%= action_name %>">
-    <div class="navbar navbar-fixed-top">
-      <nav class="navbar-inner">
-        <div class="container">
-          <%= render 'layouts/navigation' %>
-        </div>
-      </nav>
+<body>
+
+  <!-- Content
+  ================================================== -->
+<div class="wrapper">
+  <div class="header">
+    <div class="container">
+      {{SCHOOL}}
+      <div class="floatRight">
+        <%= link_to 'Sign Out', destroy_user_session_path, :method=>'delete' %>
+      </div>
+    </div></div>
+
+  <div class="navigation">
+    <div class="container">
+      <table>
+        <tr>
+          <td>
+            
+            <i class="glyphicon glyphicon-tasks"></i><br>
+            Activity
+          </td>
+          <td>
+            <%= link_to '<i class="glyphicon glyphicon-calendar"></i><br>Schedule'.html_safe, schedules_path %>
+          </td>
+          <td class="selected">
+            <%= link_to '<i class="glyphicon glyphicon-user"></i><br>Members'.html_safe, members_path %>
+          </td>
+          <td>
+            <%= link_to '<i class="glyphicon glyphicon-comment"></i><br>Emails'.html_safe, emails_path %>
+          </td>
+          <td>
+            <%= link_to '<i class="glyphicon glyphicon-phone"></i><br>Widgets'.html_safe, edit_widget_path(1) %>
+          </td>
+          <td>
+            <%= link_to '<i class="glyphicon glyphicon-cog"></i><br>Settings'.html_safe, settings_path %>
+          </td>
+        </tr>
+      </table>
     </div>
-    <div id="main" role="main">
-      <div class="container">
-        <div class="content">
-           <div class="row">
-            <div class="span12">
-              <%= render 'layouts/messages' %>
-              <%= yield %>
-            </div>
-          </div>
-          <footer>
-          </footer>
-        </div>
-      </div> <!--! end of .container -->
-    </div> <!--! end of #main -->
-  </body>
+  </div>
+
+  <div class="container main">
+    <%= render 'layouts/messages' %>
+    <%= yield %>
+  </div>
+
+  <div class="footer container">
+    <div class="floatRight">
+      Terms &nbsp; &nbsp;Feature Request &nbsp; &nbsp;Feedback &nbsp; &nbsp;Support
+    </div>
+    <strong>&copy; 2013</strong>
+  </div>
+</body>
 </html>

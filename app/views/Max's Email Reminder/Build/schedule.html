@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SchoolApp</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144-precomposed.png">
+</head>
+
+<body>
+
+	<!-- Content
+	================================================== -->
+<div class="wrapper">
+	<div class="header">
+		<div class="container">
+			{{SCHOOL}}
+			<div class="floatRight">
+				Sign Out
+			</div>
+		</div></div>
+
+	<div class="navigation">
+		<div class="container">
+			<table>
+				<tr>
+					
+					<td onClick="window.location.href = 'index.html';">
+						<i class="glyphicon glyphicon-tasks"></i><br>
+						Activity
+					</td>
+					<td onClick="window.location.href = 'schedule.html';">
+						<i class="glyphicon glyphicon-calendar"></i><br>
+						Schedule
+					</td>
+					<td class="selected" onClick="window.location.href = 'members.html';">
+						<i class="glyphicon glyphicon-user"></i><br>
+						Members
+					</td>
+					<td onClick="window.location.href = 'email.html';">
+						<i class="glyphicon glyphicon-comment"></i><br>
+						Emails
+					</td>
+					<td onClick="window.location.href = 'widget.html';">
+						<i class="glyphicon glyphicon-phone"></i><br>
+						Widget
+					</td>
+					<td onClick="window.location.href = 'settings.html';">
+						<i class="glyphicon glyphicon-cog"></i><br>
+						Settings
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="container main">
+ 
+<div class="floatRight box">
+<strong>Schedule an Intro Class</strong>
+<input type="text" placeholder="Date">
+<input type="text" placeholder="Time">
+<input type="button" value="Create Class">
+</div>
+<a href="class.html">
+	<strong>Upcoming Classes</strong>
+<table class="threeColumnGR solid clickableGlyph table">
+	<tr>
+		<td>Thursday, June 6</td>
+		<td>7:00PM</td>
+		<td>
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			14 People</td>
+	</tr>
+	<tr>
+		<td>Friday, June 7</td>
+		<td>7:00PM</td>
+		<td>
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			18 People</td>
+	</tr>
+	<tr>
+		<td>Tuesday, June 10</td>
+		<td>5:00PM</td>
+		<td>
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			7 People</td>
+	</tr>
+	<tr>
+		<td>Monday, June 16</td>
+		<td>6:00PM</td>
+		<td>
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			4 People</td>
+	</tr>
+</table>
+</a>
+
+<br>
+
+<strong>Past Classes</strong>
+<table class="threeColumnGR solid clickableGlyph table">
+	<tr>
+		<td>Thursday, June 6</td>
+		<td>7:00PM</td>
+		<td>
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			14 People</td>
+	</tr>
+	<tr>
+		<td>Friday, June 7</td>
+		<td>7:00PM</td>
+		<td>
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			18 People</td>
+	</tr>
+	<tr>
+		<td>Tuesday, June 10</td>
+		<td>5:00PM</td>
+		<td>
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			7 People</td>
+	</tr>
+	<tr>
+		<td>Monday, June 16</td>
+		<td>6:00PM</td>
+		<td>
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			4 People</td>
+	</tr>
+</table>
+
+</div></div>
+
+	<div class="footer container">
+		<div class="floatRight">
+			Terms &nbsp; &nbsp;Feature Request &nbsp; &nbsp;Feedback &nbsp; &nbsp;Support
+		</div>
+		<strong>&copy; 2013</strong>
+	</div>
+</body>
+</html>

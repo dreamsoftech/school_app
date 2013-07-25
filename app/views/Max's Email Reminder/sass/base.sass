@@ -1,0 +1,244 @@
+/* #Variables
+   ================================================== */
+
+$light: #eef0f2
+$normal: #dde0e3
+$dark: #3a424d
+$blue: #239FD8
+$green: #3faa4f
+$text: #848d99
+$inactive: #7b8d9e
+$white: #f8fafb
+
+/* #Imports
+   ================================================== */
+
+@import "resets"
+@import "mixins"
+@import "text"
+@import "forms"
+@import "glyphicons"
+@import "gotham"
+@import "tables"
+
+/* #Style
+   ================================================== */
+
+body
+	font: 14px
+	line-height: 28px
+	-webkit-font-smoothing: antialiased
+	-webkit-text-size-adjust: 100%
+	background: #fff
+	margin: 0px
+	padding: 0px
+	@include Gotham
+	color: lighten($dark, 6%)
+	cursor: default
+
+a, a:visited, a:hover, a:active
+	color: lighten($dark, 6%)
+	text-decoration: none
+	border: 0px
+	outline: 0
+
+.wrapper
+	background: $light
+	border-bottom: 1px solid $normal
+	margin-bottom: 0px
+
+.container
+	width: 960px
+	margin: 0 auto
+
+.container2
+	width: 595px
+	.textareaWrap
+		padding: 6px
+		padding-bottom: 0px
+		background: #fff
+		@include borderRadius(5px)
+		margin-bottom: 18px
+	textarea
+		border: 0px solid $normal
+		box-shadow: none
+		background: #fff
+		min-height: 370px
+		padding: 0px
+		color: $inactive
+		@include borderRadius(2px)
+		resize: none
+		&:focus
+			@include transition(.5s)
+			color: darken($text, 10%)
+
+.main
+	min-height: 520px
+	padding-bottom: 37px
+
+.header 
+	background: $dark
+	line-height: 62px
+	font-size: 30px
+	color: $light
+	font-family: "GothamMedium"
+	cursor: default
+	@include noSelect
+	.floatRight
+		font-size: 16px
+		font-weight: normal
+		color: $text
+	.container
+		color: $light
+
+.navigation
+	background: $normal
+	height: 100px
+	margin-bottom: 20px
+	font-family: "GothamMedium"
+	@include noSelect
+	table
+		width: 100%
+		td
+			width: 16.6%
+			font-size: 16px
+			line-height: 22px
+			padding-top: 19px
+			font-weight: 500
+			color: $inactive
+			text-align: center
+			height: 81px
+			max-height: 81px
+			overflow: hidden
+			vertical-align: top
+			&:hover
+				color: $dark
+				cursor: pointer
+				@include transition(.15s)
+			&:active
+				animation: navbarActive 2s
+				-moz-animation: navbarActive 2s
+				-webkit-animation: navbarActive 2s
+				-o-animation: navbarActive 2s
+			.glyphicon
+				font-size: 34px
+				line-height: 40px
+		.selected
+			color: $dark
+			background-image: url(../images/arrow.png)
+			background-size: 10%
+			background-repeat: no-repeat
+			background-position: 72px 85px
+			background-color: darken($normal, 5%)
+			&:hover
+				
+.code
+	@include Monospace
+	color: $text
+	background: $white
+	padding: 7px
+	border-radius: 5px
+	line-height: 22px
+	margin: 14px 0
+
+@-webkit-keyframes navbarActive 
+	0%   
+		color: $blue
+	100% 
+		color: lighten($blue, 50%)
+
+@-webkit-keyframes navbarActive2
+	0%   
+		background-color: $blue
+		color: $blue
+	100% 
+		background-color: lighten($blue, 50%)
+		color: lighten($blue, 50%)
+
+.footer
+	line-height: 60px
+	padding: 0px
+	color: $text
+	
+.floatRight
+	float: right
+
+.box
+	width: 320px
+
+.glyphicon
+	vertical-align: bottom	
+
+strong
+	font-family: "GothamMedium"
+	font-weight: normal
+
+// Page-specific
+
+
+.blue
+	background: $blue
+	&:hover
+		background: lighten(saturate($blue, 1%),10%)
+	&:active
+		background: darken($blue, 10%)
+
+.inactive
+	background: #d6d8db
+	&:hover
+		background: $inactive
+	&:active
+		background: saturate(darken($inactive, 10%), 2%)
+		margin-left: 17px
+
+hr 
+	border: 1px solid $normal
+	margin: 24px 0
+
+.tip
+	color: $inactive
+	font-size: 14px
+	line-height: 20px
+
+
+.center
+	text-align: center
+
+.subText
+	font-size: 14px
+	line-height: 20px
+	color: $text
+
+.section
+	border-bottom: 2px solid $normal
+	margin-bottom: 20px
+	line-height: 16px
+	height: 16px
+	vertical-align: middle
+	text-align: left
+	padding-bottom: 16px
+	vertical-align: top
+
+/* #Sign-Up
+   ================================================== */
+
+.signUpHeader
+	background: $dark
+
+.signUpSubHeader
+	background: $normal
+	line-height: 38px
+	font-family: "GothamMedium"
+
+.signUpForm
+	width: 100%
+	td
+		padding-bottom: 4px
+		color: $text
+		line-height: 22px
+		font-size: 14px
+	td:first-child
+		width: 240px
+		padding-right: 8px
+	td:last-child
+		padding-top: 8px
